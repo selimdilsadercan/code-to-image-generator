@@ -1,14 +1,14 @@
 "use client";
 
-import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/mode-html";
-import "ace-builds/src-noconflict/mode-css";
-import "ace-builds/src-noconflict/mode-python";
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/mode-typescript";
-import "ace-builds/src-noconflict/theme-monokai";
-import "ace-builds/src-noconflict/theme-terminal";
-import "ace-builds/src-noconflict/theme-twilight";
+// import "ace-builds/src-noconflict/mode-javascript";
+// import "ace-builds/src-noconflict/mode-html";
+// import "ace-builds/src-noconflict/mode-css";
+// import "ace-builds/src-noconflict/mode-python";
+// import "ace-builds/src-noconflict/mode-java";
+// import "ace-builds/src-noconflict/mode-typescript";
+// import "ace-builds/src-noconflict/theme-monokai";
+// import "ace-builds/src-noconflict/theme-terminal";
+// import "ace-builds/src-noconflict/theme-twilight";
 import { useEffect, useState } from "react";
 import { Resizable } from "re-resizable";
 import { getExtension, initialCode } from "@/constants";
@@ -66,44 +66,18 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
       minHeight={466}
       minWidth={510}
       maxWidth={1000}
-      defaultSize={{
-        width: width,
-        height: height || 500
-      }}
+      defaultSize={{ width: width, height: height || 500 }}
       onResize={handleResize}
       className="resize-container relative"
-      style={{
-        background: background
-      }}
+      style={{ background: background }}
     >
-      <div
-        className="code-block"
-        style={{
-          padding: currentPadding
-        }}
-      >
-        <div
-          className="handle handle-top absolute left-1/2 translate-x-[-50%] top-[-4px] w-2 h-2 
-            rounded-full bg-slate-300 hover:bg-slate-50"
-        ></div>
-        <div
-          className="handle handle-bottom absolute left-1/2 bottom-[-4px] w-2 h-2 rounded-full
-        bg-slate-300 hover:bg-slate-50 "
-        ></div>
-        <div
-          className="handle handle-left absolute left-[-4px] top-1/2 w-2 h-2 rounded-full 
-        bg-slate-300 hover:bg-slate-50 "
-        ></div>
-        <div
-          className="handle handle-right absolute right-[-4px] top-1/2 w-2 h-2 rounded-full
-        bg-slate-300 hover:bg-slate-50 "
-        ></div>
+      <div className="code-block" style={{ padding: currentPadding }}>
+        <div className="handle handle-top absolute left-1/2 translate-x-[-50%] top-[-4px] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50" />
+        <div className="handle handle-bottom absolute left-1/2 bottom-[-4px] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50 " />
+        <div className="handle handle-left absolute left-[-4px] top-1/2 w-2 h-2 rounded-full  bg-slate-300 hover:bg-slate-50 " />
+        <div className="handle handle-right absolute right-[-4px] top-1/2 w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50 " />
 
-        <div
-          className="
-            code-title h-[52px] px-4 flex items-center justify-between
-            bg-black bg-opacity-80"
-        >
+        <div className=" code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-80">
           <div className="dots flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-[#ff5656]"></div>
             <div className="w-3 h-3 rounded-full bg-[#ffbc6a] "></div>
@@ -115,21 +89,16 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
               type="text"
               value={`${title}${extension}`}
               onChange={(e) => handleTitleChange(e)}
-              className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium 
-                text-center bg-transparent"
-              style={{
-                lineHeight: "1.8rem"
-              }}
+              className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium text-center bg-transparent"
+              style={{ lineHeight: "1.8rem" }}
             />
           </div>
 
-          <div
-            className="icon flex justify-center items-center p-1 bg-black
-               bg-opacity-30 rounded-sm"
-          >
-            <Image src={icon} className="w-[33px]" alt="" />
+          <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-30 rounded-sm">
+            <Image src={icon} width={33} height={33} alt={icon} />
           </div>
         </div>
+
         <AceEditor
           value={code}
           name="UNIQUE_ID_OF_DIV"
