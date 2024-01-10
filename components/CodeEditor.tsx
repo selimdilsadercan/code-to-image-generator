@@ -32,7 +32,6 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
   const [extension, setExtension] = useState(".js");
 
   useEffect(() => {
-    // Update the extension when the language changes
     setExtension(getExtension(language));
   }, [language]);
 
@@ -71,13 +70,13 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
       className="resize-container relative"
       style={{ background: background }}
     >
-      <div className="code-block" style={{ padding: currentPadding }}>
+      <div style={{ padding: currentPadding }}>
         <div className="handle handle-top absolute left-1/2 translate-x-[-50%] top-[-4px] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50" />
         <div className="handle handle-bottom absolute left-1/2 bottom-[-4px] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50 " />
         <div className="handle handle-left absolute left-[-4px] top-1/2 w-2 h-2 rounded-full  bg-slate-300 hover:bg-slate-50 " />
         <div className="handle handle-right absolute right-[-4px] top-1/2 w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50 " />
 
-        <div className=" code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-80">
+        <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-80">
           <div className="dots flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-[#ff5656]"></div>
             <div className="w-3 h-3 rounded-full bg-[#ffbc6a] "></div>
