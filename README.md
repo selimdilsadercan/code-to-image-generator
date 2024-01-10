@@ -18,3 +18,7 @@
 - make a resizeable element with re-resizeable
 - create a code editor with react-ace
 - turn a html element to an image with html2canvas
+
+---
+
+- css importları importların en altında olmalı

@@ -6,7 +6,7 @@ import { getExtension, initialCode } from "@/constants";
 import Image from "next/image";
 import AceEditor from "react-ace";
 
-import "ace-builds/src-noconflict/mode-javascript"; //css importları en altta olmalı
+import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/mode-css";
 import "ace-builds/src-noconflict/mode-python";
