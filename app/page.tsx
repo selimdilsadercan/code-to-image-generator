@@ -24,17 +24,7 @@ function Page() {
     const editorElem = editorRef.current;
 
     if (editorElem) {
-      const handleElems = document.querySelectorAll(".handle") as any;
-      const cursorElem = document.querySelector(".ace_cursor") as any;
-      const codetitle = document.querySelector(".code-title") as any;
-      const codeEditor = document.querySelector(".ace_editor") as any;
-
-      handleElems.forEach((elem: any) => {
-        elem.style.display = "none";
-      });
-      cursorElem.style.display = "none";
-      codetitle.style.boxShadow = "none";
-      codeEditor.style.boxShadow = "none";
+      document.querySelectorAll(".handle").forEach((elem: any) => (elem.style.display = "none"));
 
       const canvas = await html2canvas(editorElem);
       const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -44,18 +34,12 @@ function Page() {
       link.href = image;
       link.click();
 
-      handleElems.forEach((elem: any) => {
-        elem.style.display = "block";
-      });
-
-      cursorElem.style.display = "block";
-      codetitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
-      codeEditor.style.boxShadow = "2px 3px 10px rgba(0, 0, 0, 0.2)";
+      document.querySelectorAll(".handle").forEach((elem: any) => (elem.style.display = "block"));
     }
   };
 
   return (
-    <div className=" h-full flex flex-col items-center pt-8 justify-between">
+    <div className="h-full flex flex-col items-center pt-8 justify-between bg-[#0d0d0d] text-[#848484]">
       <div className="code-editor-ref" ref={editorRef}>
         <CodeEditor language={language} theme={theme} background={background} icon={activeIcon} currentPadding={currentPadding} />
       </div>
