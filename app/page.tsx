@@ -44,10 +44,10 @@ function Page() {
       link.href = image;
       link.click();
 
-      //show elements
       handleElems.forEach((elem: any) => {
         elem.style.display = "block";
       });
+
       cursorElem.style.display = "block";
       codetitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
       codeEditor.style.boxShadow = "2px 3px 10px rgba(0, 0, 0, 0.2)";
@@ -55,7 +55,7 @@ function Page() {
   };
 
   return (
-    <main className=" h-[100vh] flex flex-col items-center mt-8 justify-between">
+    <div className=" h-full flex flex-col items-center pt-8 justify-between">
       <div className="code-editor-ref" ref={editorRef}>
         <CodeEditor language={language} theme={theme} background={background} icon={activeIcon} currentPadding={currentPadding} />
       </div>
@@ -68,15 +68,15 @@ function Page() {
 
         <div className="export-btn self-center ml-auto">
           <button
-            className="flex items-center gap-3 py-2 px-3 bg-blue-400 rounded-md text-sm text-blue-400 font-medium bg-opacity-10 hover:bg-opacity-80 hover:text-slate-50 ease-in-out transition-all duration-300"
+            className="flex items-center gap-2 py-2 px-3 bg-blue-400 rounded-md text-sm text-blue-400 font-medium bg-opacity-10 hover:bg-opacity-80 hover:text-slate-50 ease-in-out transition-all duration-300"
             onClick={exportPng}
           >
-            <Download />
+            <Download size={20} />
             Export PNG
           </button>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 
