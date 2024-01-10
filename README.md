@@ -10,7 +10,11 @@
 - [x] "npx shadcn-ui@latest init" to initialize shadcn
 - [x] html, body, :root { height: 100% } thing at app/globals.css
 
+- [x] "npm i react-ace"
+- [x] add .ace_scrollbar .ace_editor .ace_content .ace_scroller classes and manipualte them in /app/globals.css
+
 ---
 
-- make a div resible with re-resizeable
-- create a code with editor with react-ace
+- make a resizeable element with re-resizeable
+- create a code editor with react-ace
+- turn a html element to an image with html2canvas
