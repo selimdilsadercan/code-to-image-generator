@@ -25,8 +25,10 @@ function LanguageSelector({ language, setLanguage, seActiveIcon }: Props) {
       <p className="py-[5px] text-sm font-medium">Language</p>
       <DropdownMenu>
         <DropdownMenuTrigger className="dropdown-title">
-          {language}
-          <ChevronDown />
+          <div className="h-[37px] rounded-[3px] border border-[#f9f9f945] p-1 flex items-center justify-between cursor-pointer">
+            {language}
+            <ChevronDown />
+          </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           {languages.map((language, i) => (

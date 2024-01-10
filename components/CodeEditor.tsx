@@ -16,8 +16,8 @@ import AceEditor from "react-ace";
 import Image from "next/image";
 
 interface Props {
-  language: string;
   theme: string;
+  language: string;
   icon: string;
   background?: string;
   currentPadding?: string;
@@ -99,6 +99,7 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
         </div>
 
         <AceEditor
+          style={{ width: "100%" }}
           value={code}
           name="UNIQUE_ID_OF_DIV"
           fontSize={16}
@@ -110,7 +111,6 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
           showPrintMargin={false}
           highlightActiveLine={false}
           editorProps={{ $blockScrolling: true }}
-          className="ace-editor-container"
           onChange={handleCodeChange}
         />
       </div>

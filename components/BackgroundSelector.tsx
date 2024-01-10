@@ -18,9 +18,11 @@ function BackgroundSelector({ background, setBackground }: Props) {
     <div>
       <p className="py-[5px] text-sm font-medium">Background Selector</p>
       <DropdownMenu>
-        <DropdownMenuTrigger className="dropdown-title">
-          <div className="rounded-full w-[20px] h-[20px]" style={{ background: background }} />
-          <ChevronDown />
+        <DropdownMenuTrigger>
+          <div className="h-[37px] rounded-[3px] border border-[#f9f9f945] p-1 flex items-center justify-between cursor-pointer">
+            <div className="rounded-full w-[20px] h-[20px]" style={{ background: background }} />
+            <ChevronDown />
+          </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           {backgrounds.map((backgrounditem, i) => (

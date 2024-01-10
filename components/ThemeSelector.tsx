@@ -19,8 +19,10 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
       <p className="py-[5px] text-sm font-medium">Code Colors</p>
       <DropdownMenu>
         <DropdownMenuTrigger className="dropdown-title">
-          {theme}
-          <ChevronDown />
+          <div className="h-[37px] rounded-[3px] border border-[#f9f9f945] p-1 flex items-center justify-between cursor-pointer">
+            {theme}
+            <ChevronDown />
+          </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           {themes.map((themeitem, i) => (
