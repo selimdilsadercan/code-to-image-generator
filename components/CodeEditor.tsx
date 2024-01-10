@@ -1,19 +1,20 @@
 "use client";
 
-// import "ace-builds/src-noconflict/mode-javascript";
-// import "ace-builds/src-noconflict/mode-html";
-// import "ace-builds/src-noconflict/mode-css";
-// import "ace-builds/src-noconflict/mode-python";
-// import "ace-builds/src-noconflict/mode-java";
-// import "ace-builds/src-noconflict/mode-typescript";
-// import "ace-builds/src-noconflict/theme-monokai";
-// import "ace-builds/src-noconflict/theme-terminal";
-// import "ace-builds/src-noconflict/theme-twilight";
 import { useEffect, useState } from "react";
 import { Resizable } from "re-resizable";
 import { getExtension, initialCode } from "@/constants";
-import AceEditor from "react-ace";
 import Image from "next/image";
+import AceEditor from "react-ace";
+
+import "ace-builds/src-noconflict/mode-javascript"; //css importları en altta olmalı
+import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/mode-css";
+import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-typescript";
+import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/theme-terminal";
+import "ace-builds/src-noconflict/theme-twilight";
 
 interface Props {
   theme: string;
@@ -99,9 +100,7 @@ function CodeEditor({ language, theme, icon, background, currentPadding }: Props
         </div>
 
         <AceEditor
-          style={{ width: "100%" }}
           value={code}
-          name="UNIQUE_ID_OF_DIV"
           fontSize={16}
           theme={theme}
           mode={language.toLocaleLowerCase()}
