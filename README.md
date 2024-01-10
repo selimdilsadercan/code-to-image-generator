@@ -5,7 +5,7 @@
 - [x] remove page.tsx add standart page.tsx
 - [x] create /.env file, add .env to .gitignore
 - [x] add /.prettierrc
-- [x] "npx husky init" and "npm i"
+- [x] "npx husky-init" and "npm i"
 
 - [x] "npx shadcn-ui@latest init" to initialize shadcn
 - [x] html, body, :root { height: 100% } thing at app/globals.css
