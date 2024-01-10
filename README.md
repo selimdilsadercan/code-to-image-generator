@@ -9,3 +9,8 @@
 
 - [x] "npx shadcn-ui@latest init" to initialize shadcn
 - [x] html, body, :root { height: 100% } thing at app/globals.css
+
+---
+
+- make a div resible with re-resizeable
+- create a code with editor with react-ace
